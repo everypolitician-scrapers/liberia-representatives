@@ -51,10 +51,9 @@ def scrape_mp(url, data)
     member_since: noko.xpath('.//div[@class="field-label" and contains(.,"Member Since")]/following::span[1]').text,
     party: unbracket(party).first,
     party_id: unbracket(party).last,
-    term: 2011,
+    term: 53,
     source: url.to_s,
   })
-  puts data[:party]
   ScraperWiki.save_sqlite([:id, :term], data)
 end
 
