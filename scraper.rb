@@ -8,18 +8,18 @@ require 'open-uri'
 require 'date'
 require 'csv'
 
-require 'colorize'
-require 'pry'
-require 'csv'
-require 'open-uri/cached'
-OpenURI::Cache.cache_path = '.cache'
+# require 'colorize'
+# require 'pry'
+# require 'csv'
+# require 'open-uri/cached'
+# OpenURI::Cache.cache_path = '.cache'
 
 def noko_for(url)
   Nokogiri::HTML(open(url).read) 
 end
 
 def unbracket(str)
-  return ['Independent', 'independent'] if str.empty?
+  return ['Independent', 'Independent'] if str.empty?
   cap = str.match(/^(.*?)\s*\((.*?)\)\s*$/) or return [str, str]
   return cap.captures 
 end
