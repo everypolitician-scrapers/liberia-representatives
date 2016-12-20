@@ -57,12 +57,5 @@ def scrape_mp(url, data)
   ScraperWiki.save_sqlite([:id, :term], data)
 end
 
-term = {
-  id: 53,
-  name: '53rd Session',
-  start_date: '2011',
-}
-ScraperWiki.save_sqlite([:id], term, 'terms')
-
 scrape_list('http://legislature.gov.lr/house')
 
